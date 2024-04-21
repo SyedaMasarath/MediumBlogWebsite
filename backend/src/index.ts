@@ -31,9 +31,3 @@ app.put('/api/v1/blog/blog', (c) => {
 })
 
 export default app;
-
-//aiven string
-//postgres://avnadmin:AVNS_mxnpkZ3lNpRramIV9oV@postgres-test-db-zmasarath-3f78.a.aivencloud.com:20489/defaultdb?sslmode=require
-
-//connection pool URL
-//DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMzI5OTU1OWEtMmRjYi00YzRhLTgwN2EtNjRkMzQ2NzgxY2Q0IiwidGVuYW50X2lkIjoiYzg4NGRmMzNjOGVlMzE3NWNhYzgxMjZmMDIyOTI5ZWJkM2MyNjVkZTgzMWE5ZjM4NDljZWViN2Y1ZDY5ODI2MCIsImludGVybmFsX3NlY3JldCI6IjdjMWRhMTVkLTg0OTAtNDgwOC1iODY3LThjNDhhNzk1MTc5YiJ9.SQMa92sef4vPHKcPsbko0leSJyCnhYvDw4z3S65UcIE"
