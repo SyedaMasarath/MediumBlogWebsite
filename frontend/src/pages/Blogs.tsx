@@ -1,26 +1,34 @@
+import { Appbar } from "../components/Appbar"
 import { BlogCard } from "../components/BlogCard"
+import { BlogSkeleton } from "../components/BlogSkeleton";
+import { useBlogs } from "../hooks"
 
 export const Blogs = () =>{
-    return <div className="flex justify-center">
-        <div className="max-w-xl">
-        <BlogCard
-            authorName="zmasarath"
-            title="Making a Medium Clone with MERN Stack"
-            content="in this article we explore step by step how to create a medium clone with mern"
+    const {loading, blogs} = useBlogs();
+
+    if(loading){
+        return <div>
+        <Appbar /> <div className="flex justify-center">
+                <div>
+                <BlogSkeleton />
+                <BlogSkeleton />
+                <BlogSkeleton />
+                </div>
+            </div>
+        </div>
+    }
+    return <div>
+        <Appbar/>
+        <div  className="flex justify-center">
+        <div>
+        {blogs.map(blog => <BlogCard
+            id = {blog.id}
+            authorName={blog.author.name || "Anonymous"}
+            title={blog.title}
+            content={blog.content}
             publishedDate="12.05.24"
-        ></BlogCard>
-        <BlogCard
-            authorName="zmasarath"
-            title="Making a Medium Clone with MERN Stack"
-            content="in this article we explore step by step how to create a medium clone with mern"
-            publishedDate="12.05.24"
-        ></BlogCard>
-        <BlogCard
-            authorName="zmasarath"
-            title="Making a Medium Clone with MERN Stack"
-            content="in this article we explore step by step how to create a medium clone with mern"
-            publishedDate="12.05.24"
-        ></BlogCard>
-    </div>
+        ></BlogCard>)}
+            </div>
+        </div>
     </div>
 }
